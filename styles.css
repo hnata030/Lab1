@@ -1,0 +1,39 @@
+﻿/* Стили для заголовков */
+h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+/* Стили для ссылок */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Стили для кнопок */
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+/* Стили для ошибок */
+.error-message {
+    color: #dc3545; /* Красный цвет текста */
+    font-size: 14px; /* Размер шрифта */
+    font-style: italic; /* Курсивное начертание */
+    margin-top: 5px; /* Верхний отступ */
+}
+
+.error-input {
+    border: 1px solid #dc3545; /* Красная обводка */
+    background-color: #f8d7da; /* Фоновый цвет для подсветки ошибки */
+}
+/* Стили для элемента */
+.textBoxStyle {
+    border: 2px solid #333; /* Обводка элемента */
+    background-color: #f2f2f2; /* Фоновый цвет элемента */
+    padding: 5px; /* Поля вокруг элемента */
+    margin-bottom: 10px; /* Отступ снизу */
+}

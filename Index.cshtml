@@ -1,0 +1,36 @@
+﻿@model Lab1.Models.CalculatorModel
+
+@{
+    ViewBag.Title = "Калькулятор";
+
+    // Проверяем тип ViewBag.TargetValue и Model.Result
+    decimal targetValue = ViewBag.TargetValue != null ? Convert.ToDecimal(ViewBag.TargetValue) : 0;
+    decimal result = Model.Result;
+
+    // Сравниваем значения и формируем сообщение
+    string message = targetValue == result ? "Результат равен TargetValue!" : "Результат не равен TargetValue!";
+}
+
+@section Message {
+    <p>@message</p>
+}
+
+<h2>Калькулятор</h2>
+
+@using (Html.BeginForm("Calculate", "Calculator", FormMethod.Post))
+{
+    @Html.TextBoxFor(m => m.Operand1)
+    @Html.ValidationMessageFor(m => m.Operand1)
+
+    @Html.TextBoxFor(m => m.Operand2)
+    @Html.ValidationMessageFor(m => m.Operand2)
+
+    @Html.DropDownListFor(m => m.Operation, new SelectList(new[] { "+", "-", "*", "/" }))
+
+    <input type="submit" value="Посчитать" />
+    <input type="button" value="Очистить поля" onclick="window.location.href='@Url.Action("Index", "Calculator")'" />
+}
+
+@section Message {
+    <p>@message</p>
+}
